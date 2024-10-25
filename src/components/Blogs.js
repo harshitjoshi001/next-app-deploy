@@ -6,6 +6,6 @@ export const Blogs = async () => {
   const posts = postsData.posts;
 
   return posts.map((data) => {
-    return <Card data={data} />;
+    return <Card key={data.id} data={data} />;
   });
 };
