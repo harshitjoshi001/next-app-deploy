@@ -1,0 +1,25 @@
+.cardContainer{
+    border: 1px solid black;
+    width: 70vw;
+    padding: 20px;
+    border-radius: 20px;
+    margin:  10px;
+    
+}
+
+.cardContainer > *{
+    margin: 5px 10px
+}
+
+.main{
+    display : flex;
+    justify-content: center;
+}
+
+.detailsButton{
+    background-color: grey;
+    color: white;
+    padding: 3px;
+    border-radius: 5px;
+    box-shadow: 1px 2px 2px 1px;
+}

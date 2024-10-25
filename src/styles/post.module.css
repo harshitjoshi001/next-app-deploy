@@ -1,0 +1,23 @@
+.postMain{
+ display: flex;
+ justify-content: center;
+}
+
+.postContainer{
+ width: 70vw;
+ border: 2px solid black;
+ margin-top: 20px;
+ border-radius: 10px;
+}
+
+.postContainer > * {
+    margin: 10px;
+}
+
+.postContainer:hover{
+    width: 70vw;
+    border: 2px solid black;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 5px; 
+}
