@@ -1,20 +1,19 @@
 import { NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 
-export async function GET(request, res) {
+export async function GET(request, response) {
   const { searchParams } = new URL(request.url);
   const secret = searchParams.get("secret");
 
   if (secret !== "SECRET_TOKEN") {
-    return NextResponse.json({ message: "Invalid token" }, { status: 401 });
+    return response.json({ message: "Invalid token" }, { status: 401 });
   }
 
   try {
-    await res.revalidate("/");
+    revalidatePath("/");
     return NextResponse.json({ revalidated: true });
   } catch (err) {
-    return NextResponse.json(
-      { message: "Error revalidating" },
-      { status: 500 }
-    );
+    console.error("Revalidation error:", err);
+    return response.json({ message: "Error revalidating" }, { status: 500 });
   }
 }
