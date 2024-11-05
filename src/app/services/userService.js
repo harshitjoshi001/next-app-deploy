@@ -6,7 +6,9 @@ export const revalidate = async () => {
     .then((data) => {
       if (data.revalidated) {
         console.log(`Page revalidated successfully`);
-        window.location.reload();
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
       } else {
         console.log("Failed to revalidate the page");
       }
